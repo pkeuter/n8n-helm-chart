@@ -107,6 +107,8 @@ spec:
           readinessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          lifecycle:
+            {{- toYaml .Values.main.lifecycle | nindent 12 }}
           resources:
             {{- toYaml .Values.worker.resources | nindent 12 }}
           volumeMounts:
